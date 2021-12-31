@@ -1,0 +1,23 @@
+{
+  "data": [
+    {
+      "cases": 2,
+      "date": "2020-01-01T00:00:00.000Z"
+    },
+    {
+      "cases": 5,
+      "date": "2020-01-02T00:00:00.000Z"
+    },
+    {
+      "cases": 7,
+      "date": "2020-01-03T00:00:00.000Z"
+    }
+  ],
+  "meta": {
+    "source": "Robert Koch-Institut",
+    "contact": "Marlon Lueckert (m.lueckert@me.com)",
+    "info": "https://github.com/marlon360/rki-covid-api",
+    "lastUpdate": "2021-01-03T00:00:00.000Z",
+    "lastCheckedForUpdate": "2021-01-04T13:20:30.694Z"
+  }
+}
