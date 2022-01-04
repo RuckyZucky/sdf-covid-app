@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:http/http.dart';
 import 'package:sdf_covid/data/cases.dart';
+import 'package:sdf_covid/data/deaths.dart';
+import 'package:sdf_covid/data/hospitalizations.dart';
 
 class GermanyRepository {
   static final Client _client = Client();
@@ -18,5 +20,12 @@ class GermanyRepository {
     }
   }
 
+  static Future<DeathsData> getDeaths([int? days]) async {
+    throw UnimplementedError("TODO: Implement getDeaths method");
+  }
+
+  static Future<HospitalizationsData> getHospitalizations([int? days]) async {
+    throw UnimplementedError("TODO: Implement getHospitalizations method");
+  }
 
 }
