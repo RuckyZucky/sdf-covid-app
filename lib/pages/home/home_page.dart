@@ -68,11 +68,11 @@ class _HomePageContent extends StatelessWidget {
             children: [
               DataText(
                 title: const Text('Neue Fälle / 24h'),
-                data: state.cases?.cases.toDouble(),
+                data: state.cases?.count.toDouble(),
               ),
               DataText(
                 title: const Text('Verstorben / 24h'),
-                data: state.deaths?.deaths.toDouble(),
+                data: state.deaths?.count.toDouble(),
               ),
               DataText(
                 title: Text('7 Tage Inzidenz'),
@@ -80,7 +80,7 @@ class _HomePageContent extends StatelessWidget {
               ),
               DataText(
                 title: const Text('Hospitalisierungen'),
-                data: state.hospitalization?.hospitalizations.toDouble(),
+                data: state.hospitalization?.count.toDouble(),
               ),
             ],
           );

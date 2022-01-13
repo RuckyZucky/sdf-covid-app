@@ -1,6 +1,4 @@
-import 'package:sdf_covid/data/cases.dart';
-import 'package:sdf_covid/data/deaths.dart';
-import 'package:sdf_covid/data/hospitalizations.dart';
+import 'package:sdf_covid/data/rki_data.dart';
 
 abstract class HomePageState {}
 
@@ -9,9 +7,9 @@ class HomePageUninitialized extends HomePageState {}
 class HomePageLoading extends HomePageState {}
 
 class HomePageLoaded extends HomePageState {
-  final CaseDay? cases;
-  final DeathDay? deaths;
-  final HospitalizationDay? hospitalization;
+  final Data? cases;
+  final Data? deaths;
+  final Data? hospitalization;
 
   HomePageLoaded(this.cases, this.deaths, this.hospitalization);
 }
