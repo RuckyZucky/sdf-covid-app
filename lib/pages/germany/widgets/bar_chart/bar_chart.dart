@@ -22,12 +22,15 @@ class BarChartContent extends StatelessWidget {
     }).toList();
 
     double? maxY = data?.map((e) => e.count.toDouble()).reduce((curr, next) => curr > next? curr: next);
+    if (maxY != null) {
+      maxY *= 1.25;
+    }
 
     return BarChart(
-        BarChartData(
-          maxY: maxY,
-          barGroups: chartGroupData
-        )
+      BarChartData(
+        maxY: maxY,
+        barGroups: chartGroupData
+      )
     );
   }
 

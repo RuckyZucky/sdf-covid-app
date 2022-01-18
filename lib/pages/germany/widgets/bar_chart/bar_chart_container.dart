@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:sdf_covid/data/rki_data.dart';
-import 'package:sdf_covid/pages/germany/bar_chart.dart';
+import 'package:sdf_covid/pages/germany/widgets/bar_chart/bar_chart.dart';
 
-class ChartContainer extends StatelessWidget {
+class BarChartContainer extends StatelessWidget {
   final String title;
   final List<Data>? data;
 
-  const ChartContainer({
+  const BarChartContainer({
     Key? key,
     required this.title,
     required this.data
@@ -18,7 +18,7 @@ class ChartContainer extends StatelessWidget {
       child: Container(
         width: MediaQuery.of(context).size.width * 0.95,
         height: MediaQuery.of(context).size.width * 0.95 * 0.65,
-        padding: EdgeInsets.fromLTRB(0, 10, 20, 10),
+        padding: const EdgeInsets.fromLTRB(0, 10, 20, 10),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
@@ -28,14 +28,14 @@ class ChartContainer extends StatelessWidget {
           children: <Widget>[
             Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                   color: Colors.black,
                   fontSize: 16,
                   fontWeight: FontWeight.bold),
             ),
             Expanded(
                 child: Container(
-                  padding: EdgeInsets.only(top: 10),
+                  padding: const EdgeInsets.only(top: 10),
                   child: BarChartContent(data: data),
                 ))
           ],
