@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'pages/home/home_page.dart';
+import 'pages/germany/germany_page.dart';
 
 void main() {
   runApp(const CovidApp());
@@ -16,7 +17,10 @@ class CovidApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      routes: {
+        "/": (context) => const HomePage(),
+        "/germany": (context) => const GermanyPage()
+      }
     );
   }
 }

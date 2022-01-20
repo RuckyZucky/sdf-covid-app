@@ -47,6 +47,16 @@ class HomePage extends StatelessWidget {
             label: 'Bundesländer'
           ),
         ],
+        onTap: (index){
+          switch(index){
+            case 0:
+              Navigator.pushNamed(context, "/");
+              break;
+            case 1:
+              Navigator.pushNamed(context, "/germany");
+              break;
+          }
+        }
       ),
     );
   }
