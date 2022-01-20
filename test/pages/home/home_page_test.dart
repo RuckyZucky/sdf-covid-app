@@ -11,7 +11,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:sdf_covid/pages/home/home_page.dart';
 
 void main() {
-  testWidgets('HomePage test', (WidgetTester tester) async {
+  testWidgets('HomePage displays correct title', (WidgetTester tester) async {
     const testWidget = MaterialApp(
       home: HomePage(),
     );

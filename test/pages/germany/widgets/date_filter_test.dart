@@ -18,5 +18,4 @@ void main() {
     expect(find.text('Jahr'), findsOneWidget);
     expect(find.text('Gesamt'), findsOneWidget);
   });
-
 }
