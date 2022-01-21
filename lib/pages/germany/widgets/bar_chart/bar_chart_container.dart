@@ -18,9 +18,10 @@ class BarChartContainer extends StatelessWidget {
       child: Container(
         width: MediaQuery.of(context).size.width * 0.95,
         height: MediaQuery.of(context).size.width * 0.95 * 0.65,
-        padding: const EdgeInsets.fromLTRB(0, 10, 20, 10),
+        padding: const EdgeInsets.fromLTRB(32, 8, 8, 16),
+        margin: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Colors.white54,
           borderRadius: BorderRadius.circular(20),
         ),
         child: Column(
@@ -29,15 +30,16 @@ class BarChartContainer extends StatelessWidget {
             Text(
               title,
               style: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold),
+                color: Colors.black,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             Expanded(
-                child: Container(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: BarChartContent(data: data),
-                ))
+              child: Container(
+                padding: const EdgeInsets.only(top: 10),
+                child: BarChartContent(data: data),
+              )),
           ],
         ),
       ),

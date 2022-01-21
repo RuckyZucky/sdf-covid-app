@@ -7,6 +7,8 @@ import 'package:sdf_covid/bloc/germany_page/germany_page_state.dart';
 import 'bar_chart_container.dart';
 
 class CovidCharts extends StatelessWidget {
+  const CovidCharts({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<GermanyPageBloc, GermanyPageState>(
@@ -32,7 +34,10 @@ class CovidCharts extends StatelessWidget {
         );
       }
 
-      return Column(children: [Center(child: CircularProgressIndicator())]);
+      return const SizedBox(
+        height: 150.0,
+        child:  Center(child: CircularProgressIndicator())
+      );
     });
   }
 }

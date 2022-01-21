@@ -31,32 +31,35 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.map),
-            label: 'Deutschland'
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.map_outlined),
-            label: 'Bundesländer'
-          ),
-        ],
-        onTap: (index){
-          switch(index){
-            case 0:
-              Navigator.pushNamed(context, "/");
-              break;
-            case 1:
-              Navigator.pushNamed(context, "/germany");
-              break;
+      bottomNavigationBar: Hero(
+        tag: 'BottomNavBar',
+        child: BottomNavigationBar(
+          currentIndex: 0,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.map),
+              label: 'Deutschland'
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.map_outlined),
+              label: 'Bundesländer'
+            ),
+          ],
+          onTap: (index){
+            switch(index){
+              case 0:
+                Navigator.pushReplacementNamed(context, "/");
+                break;
+              case 1:
+                Navigator.pushReplacementNamed(context, "/germany");
+                break;
+            }
           }
-        }
+        ),
       ),
     );
   }

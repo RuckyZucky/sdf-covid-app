@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:intl/intl_standalone.dart';
 
-import 'pages/home/home_page.dart';
 import 'pages/germany/germany_page.dart';
+import 'pages/home/home_page.dart';
 
-void main() {
+void main() async {
+  var locale = await findSystemLocale();
+  initializeDateFormatting(locale);
   runApp(const CovidApp());
 }
 
