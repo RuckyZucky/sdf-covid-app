@@ -1,3 +1,6 @@
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:intl/intl.dart';
+
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -5,15 +8,24 @@ import 'package:sdf_covid/data/rki_data.dart';
 import 'package:sdf_covid/pages/germany/widgets/bar_chart/bar_chart_container.dart';
 
 void main() {
+
   testWidgets('ChartContainer should display title', (WidgetTester tester) async {
+    print("test");
+    await initializeDateFormatting();
+
+    print("test");
     final List<Data> data = [Data(1, DateTime.now())];
+    print("test");
 
     final testWidget = MaterialApp(
       home: BarChartContainer(title: "Fälle", data: data)
     );
+    print("test");
 
     await tester.pumpWidget(testWidget);
+    print("test");
     await tester.pumpAndSettle();
+    print("test");
 
     expect(find.text('Fälle'), findsOneWidget);
   });
