@@ -2,35 +2,47 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sdf_covid/bloc/germany_page/germany_page_bloc.dart';
 import 'package:sdf_covid/bloc/germany_page/germany_page_event.dart';
-import 'package:sdf_covid/bloc/germany_page/germany_page_state.dart';
-import 'package:sdf_covid/pages/germany/widgets/date_filter/date_filter_button.dart';
 
 import '../../timeframe.dart';
 
-class DateFilter extends StatelessWidget {
+class DateFilter extends StatelessWidget implements PreferredSizeWidget {
   const DateFilter({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<GermanyPageBloc, GermanyPageState>(
-      builder: (context, state) {
-        return Row(
-            children: <Widget>[
-              DateFilterButton(() {
-                context.read<GermanyPageBloc>().add(LoadGermanyPageData(timeframe: TimeFrame.DAYS));
-              }, "Woche"),
-              DateFilterButton(() {
-                context.read<GermanyPageBloc>().add(LoadGermanyPageData(timeframe: TimeFrame.MONTH));
-              }, "Monat"),
-              DateFilterButton(() {
-                context.read<GermanyPageBloc>().add(LoadGermanyPageData(timeframe: TimeFrame.YEAR));
-              }, "Jahr"),
-              DateFilterButton(() {
-                context.read<GermanyPageBloc>().add(LoadGermanyPageData());
-              }, "Gesamt")
-            ]
-        );
-      }
+    return TabBar(
+      onTap: (index) {
+        TimeFrame? timeFrame;
+        switch(index) {
+          case 0:
+            timeFrame = TimeFrame.DAYS;
+            break;
+          case 1:
+            timeFrame = TimeFrame.MONTH;
+            break;
+          case 2:
+            timeFrame = TimeFrame.YEAR;
+            break;
+        }
+        context.read<GermanyPageBloc>().add(LoadGermanyPageData(timeframe: timeFrame));
+      },
+      tabs: const [
+        Tab(
+          text: 'Woche',
+        ),
+        Tab(
+          text: 'Monat',
+        ),
+        Tab(
+          text: 'Jahr',
+        ),
+        Tab(
+          text: 'Gesamt',
+        ),
+      ],
     );
   }
+
+  @override
+  Size get preferredSize => const Size(double.infinity, 52.0);
 }
