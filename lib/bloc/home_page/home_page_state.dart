@@ -10,6 +10,7 @@ class HomePageLoaded extends HomePageState {
   final Data? cases;
   final Data? deaths;
   final Data? hospitalization;
+  final Data? incidence;
 
-  HomePageLoaded(this.cases, this.deaths, this.hospitalization);
+  HomePageLoaded(this.cases, this.deaths, this.hospitalization, this.incidence);
 }

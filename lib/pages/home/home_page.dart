@@ -89,7 +89,7 @@ class _HomePageContent extends StatelessWidget {
               ),
               DataText(
                 title: Text('7 Tage Inzidenz'),
-                data: 245.5,
+                data: state.incidence?.count.toDouble(),
               ),
               DataText(
                 title: const Text('Hospitalisierungen'),

@@ -10,7 +10,6 @@ class GermanyPageBloc extends Bloc<GermanyPageEvent, GermanyPageState> {
     on<LoadGermanyPageData>((event, emit) async {
       emit(GermanyPageLoading());
 
-
       int? days;
 
       switch (event.timeframe) {
@@ -43,8 +42,14 @@ class GermanyPageBloc extends Bloc<GermanyPageEvent, GermanyPageState> {
       } catch(e) {
         print(e);
       }
+      List<Data>? incidence;
+      try {
+        incidence = (await GermanyRepository.getIncidence(days));
+      } catch(e) {
+        print(e);
+      }
 
-      emit(GermanyPageLoaded(cases, deaths, hospitalization));
+      emit(GermanyPageLoaded(cases, deaths, hospitalization, incidence));
     });
   }
 

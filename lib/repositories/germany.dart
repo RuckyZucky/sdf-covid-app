@@ -47,6 +47,11 @@ class GermanyRepository {
   }
 
   static Future<List<Data>> getIncidence([int? days]) async {
+    if (days != null) {
+      // 6 more days needed for incidence calculation
+      days += 6;
+    }
+
     String daysString = days == null ? '' : '/$days';
 
     final result = await _client.get(Uri.parse('https://api.corona-zahlen.org/germany/history/cases$daysString'));

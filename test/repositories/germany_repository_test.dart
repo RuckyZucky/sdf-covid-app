@@ -44,15 +44,15 @@ void main() {
     expect(incidence.length, isNot(0));
   });
 
-  test('getIncidence for 7 days should return one value', () async {
+  test('getIncidence for 7 days should return 7 values', () async {
     final incidence = await GermanyRepository.getIncidence(7);
 
-    expect(incidence.length, 1);
+    expect(incidence.length, 7);
   });
 
-  test('getIncidence for 14 days should return 8 value', () async {
+  test('getIncidence for 14 days should return 14 value', () async {
     final incidence = await GermanyRepository.getIncidence(14);
 
-    expect(incidence.length, 8);
+    expect(incidence.length, 14);
   });
 }
