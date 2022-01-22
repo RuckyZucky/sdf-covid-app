@@ -44,4 +44,8 @@ class GermanyRepository {
     }
   }
 
+  static Future<List<Data>> getIncidence([int? days]) async {
+    throw UnimplementedError("TODO");
+  }
+
 }

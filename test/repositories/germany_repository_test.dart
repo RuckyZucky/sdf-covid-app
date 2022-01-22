@@ -38,4 +38,16 @@ void main() {
 
     expect(hospitalizations.length, 10);
   });
+
+  test('getIncidence without specified days should return 200', () async {
+    final incidence = await GermanyRepository.getIncidence();
+
+    expect(incidence.length, isNot(0));
+  });
+
+  test('getIncidence with specified days should return 200', () async {
+    final incidence = await GermanyRepository.getIncidence(10);
+
+    expect(incidence.length, 10);
+  });
 }
