@@ -1,6 +1,8 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
+import 'package:sdf_covid/data/incidence/incidence_calculator.dart';
+import 'package:sdf_covid/data/incidence/population.dart';
 import 'package:sdf_covid/data/rki_data.dart';
 
 class GermanyRepository {
@@ -41,6 +43,24 @@ class GermanyRepository {
       return DataContainer.fromJsonGermany(jsonDecode(result.body), Data.hospitalizationsFromJson).data;
     } else {
       throw Exception('getHospitalizations returned with status code ${result.statusCode}\n${result.body}');
+    }
+  }
+
+  static Future<List<Data>> getIncidence([int? days]) async {
+    if (days != null) {
+      // 6 more days needed for incidence calculation
+      days += 6;
+    }
+
+    String daysString = days == null ? '' : '/$days';
+
+    final result = await _client.get(Uri.parse('https://api.corona-zahlen.org/germany/history/cases$daysString'));
+
+    if (result.statusCode == 200) {
+      final data = DataContainer.fromJsonGermany(jsonDecode(result.body), Data.casesFromJson).data;
+      return IncidenceCalculator(data, population["GER"]!.toInt()).calculate();
+    } else {
+      throw Exception('getCases returned with status code ${result.statusCode}\n${result.body}');
     }
   }
 
