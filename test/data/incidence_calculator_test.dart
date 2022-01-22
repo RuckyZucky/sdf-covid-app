@@ -3,7 +3,7 @@ import 'package:sdf_covid/data/incidence/incidence_calculator.dart';
 import 'package:sdf_covid/data/rki_data.dart';
 
 void main() {
-  test('IncidenceCalculator throws error when less than 7 days of data are supplied', () async {
+  test('IncidenceCalculator throws exception when less than 7 days of data are supplied', () async {
     final List<Data> cases = [
       Data(1, DateTime(2020, 8, 8)),
       Data(2, DateTime(2020, 8, 9)),
@@ -54,7 +54,7 @@ void main() {
 
     final incidence = IncidenceCalculator(cases, 100000).calculate();
 
-    expect(incidence.length, 14);
+    expect(incidence.length, 8);
     expect(incidence.last.count, 28);
     expect(incidence.last.date, DateTime(2020, 8, 14)); // I'm not sure if this will work
   });
