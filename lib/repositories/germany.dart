@@ -58,7 +58,7 @@ class GermanyRepository {
 
     if (result.statusCode == 200) {
       final data = DataContainer.fromJsonGermany(jsonDecode(result.body), Data.casesFromJson).data;
-      return IncidenceCalculator(data, population["GER"]!.toInt()).calculate();
+      return calculateIncidence(data, population["GER"]!.toInt());
     } else {
       throw Exception('getCases returned with status code ${result.statusCode}\n${result.body}');
     }
