@@ -5,8 +5,9 @@ abstract class FedStatePageEvent{}
 
 class LoadFedStatePageData extends FedStatePageEvent {
   final TimeFrame? timeframe;
+  final FederalState? federalState;
 
-  LoadFedStatePageData({this.timeframe});
+  LoadFedStatePageData({this.timeframe,this.federalState});
 
 }
 

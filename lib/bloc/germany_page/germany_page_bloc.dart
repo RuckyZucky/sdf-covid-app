@@ -22,6 +22,9 @@ class GermanyPageBloc extends Bloc<GermanyPageEvent, GermanyPageState> {
         case (TimeFrame.year):
           days = 365;
           break;
+        case (TimeFrame.ALL):
+          days = null;
+          break;
       }
 
       List<Data>? cases;

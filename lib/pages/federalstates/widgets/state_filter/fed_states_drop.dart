@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sdf_covid/bloc/federal_state/fedstate_page_bloc.dart' ;
+import 'package:sdf_covid/bloc/federal_state/fedstate_page_event.dart' ;
+import 'package:sdf_covid/bloc/federal_state/fedstate_page_state.dart';
+import 'package:sdf_covid/data/states.dart';
 
 class FedStateFilter extends StatefulWidget {
 const FedStateFilter ({ Key? key }) : super(key: key);
@@ -12,28 +18,28 @@ const FedStateFilter ({ Key? key }) : super(key: key);
 
 class _FedStateFilterState extends State<FedStateFilter> {
 
-    List<DropdownMenuItem<String>> menuItems = [
-      DropdownMenuItem(child: Text("Berlin"), value: "BE"),
-      DropdownMenuItem(child: Text("Brandenburg"), value: "BB"),
-      DropdownMenuItem(child: Text("Bremen"), value: "BR"),
-      DropdownMenuItem(child: Text("Hamburg"), value: "HH"),
-      DropdownMenuItem(child: Text("Hamburg"), value: "HH"),
+    List<DropdownMenuItem<FederalState>> menuItems = [
+      DropdownMenuItem(child: Text("Berlin"), value: FederalState.BE),
+      DropdownMenuItem(child: Text("Brandenburg"), value: FederalState.BB),
+      DropdownMenuItem(child: Text("Bremen"), value: FederalState.HB),
+      DropdownMenuItem(child: Text("Hamburg"), value: FederalState.HH),
 
     ];
 
 
 
-    String selectedValue = "BE";
+    FederalState selectedValue = FederalState.BE;
 
     @override
     Widget build(BuildContext context) {
       return DropdownButton(
           value: selectedValue,
           items: menuItems,
-        onChanged: (String? newValue){
+        onChanged: (FederalState? newValue){
             setState(() {
               selectedValue = newValue!;
             });
+            context.read<FedStatePageBloc>().add(LoadFedStatePageData(federalState : newValue));
       },
 
 

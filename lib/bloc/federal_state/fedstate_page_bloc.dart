@@ -7,15 +7,18 @@ import 'package:sdf_covid/pages/germany/timeframe.dart';
 import 'package:sdf_covid/repositories/states.dart';
 
 class FedStatePageBloc extends Bloc<FedStatePageEvent, FedstatePageState> {
+  TimeFrame _currentTimeframe = TimeFrame.ALL;
+  FederalState _currentFederalState = FederalState.BE;
+
   FedStatePageBloc() : super(FedstatePageUninitialized()) {
     on<LoadFedStatePageData>((event, emit) async {
       emit(FedstatePageLoading());
 
-FederalState state;
-state = FederalState.BE;
+
+FederalState state = (event.federalState??_currentFederalState);
       int? days;
 
-      switch (event.timeframe) {
+      switch (event.timeframe??_currentTimeframe) {
         case (TimeFrame.DAYS):
           days = 7;
           break;
@@ -24,6 +27,9 @@ state = FederalState.BE;
           break;
         case (TimeFrame.YEAR):
           days = 365;
+          break;
+        case (TimeFrame.ALL):
+          days = null;
           break;
       }
 
