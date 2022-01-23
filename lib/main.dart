@@ -23,7 +23,8 @@ class CovidApp extends StatelessWidget {
       ),
       routes: {
         "/": (context) => const HomePage(),
-        "/germany": (context) => const GermanyPage()
+        "/germany": (context) => const GermanyPage(),
+        "/fedstates": (context) => const FederalPage()
       }
     );
   }

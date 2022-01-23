@@ -57,6 +57,9 @@ class HomePage extends StatelessWidget {
               case 1:
                 Navigator.pushReplacementNamed(context, "/germany");
                 break;
+              case 2:
+                Navigator.pushReplacementNamed(context, "/fedstates");
+                break;
             }
           }
         ),
