@@ -19,9 +19,9 @@ const FedStateFilter ({ Key? key }) : super(key: key);
 class _FedStateFilterState extends State<FedStateFilter> {
 
     List<DropdownMenuItem<FederalState>> menuItems = [
-      DropdownMenuItem(child: Text("Berlin"), value: FederalState.BE),
-      DropdownMenuItem(child: Text("Bayern"), value: FederalState.BY),
-      DropdownMenuItem(child: Text("Baden-Würtemberg"), value: FederalState.BW),
+      DropdownMenuItem(key: Key("BLN"), child: Text("Berlin"), value: FederalState.BE),
+      DropdownMenuItem(key: Key("BAY"),child: Text("Bayern"), value: FederalState.BY),
+      DropdownMenuItem(key: Key("BAD"),child: Text("Baden-Würtemberg"), value: FederalState.BW),
       DropdownMenuItem(child: Text("Brandenburg"), value: FederalState.BB),
       DropdownMenuItem(child: Text("Bremen"), value: FederalState.HB),
       DropdownMenuItem(child: Text("Hamburg"), value: FederalState.HH),
@@ -44,6 +44,7 @@ class _FedStateFilterState extends State<FedStateFilter> {
     @override
     Widget build(BuildContext context) {
       return DropdownButton(
+        key: Key('States'),
           value: selectedValue,
           items: menuItems,
         onChanged: (FederalState? newValue){
