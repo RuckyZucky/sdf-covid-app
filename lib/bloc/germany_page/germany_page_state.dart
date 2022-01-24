@@ -10,6 +10,7 @@ class GermanyPageLoaded extends GermanyPageState {
   final List<Data>? cases;
   final List<Data>? deaths;
   final List<Data>? hospitalization;
+  final List<Data>? incidence;
 
-  GermanyPageLoaded(this.cases, this.deaths, this.hospitalization);
+  GermanyPageLoaded(this.cases, this.deaths, this.hospitalization, this.incidence);
 }

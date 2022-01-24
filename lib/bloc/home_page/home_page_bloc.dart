@@ -26,8 +26,14 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
       } catch(e) {
         print(e);
       }
+      Data? incidence;
+      try {
+        incidence = (await GermanyRepository.getIncidence(1)).first;
+      } catch(e) {
+        print(e);
+      }
 
-      emit(HomePageLoaded(cases, deaths, hospitalization));
+      emit(HomePageLoaded(cases, deaths, hospitalization, incidence));
     });
   }
 

@@ -1,4 +1,3 @@
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sdf_covid/repositories/germany.dart';
 
@@ -37,5 +36,23 @@ void main() {
     final hospitalizations = await GermanyRepository.getHospitalizations(10);
 
     expect(hospitalizations.length, 10);
+  });
+
+  test('getIncidence without specified days should return 200', () async {
+    final incidence = await GermanyRepository.getIncidence();
+
+    expect(incidence.length, isNot(0));
+  });
+
+  test('getIncidence for 7 days should return 7 values', () async {
+    final incidence = await GermanyRepository.getIncidence(7);
+
+    expect(incidence.length, 7);
+  });
+
+  test('getIncidence for 14 days should return 14 value', () async {
+    final incidence = await GermanyRepository.getIncidence(14);
+
+    expect(incidence.length, 14);
   });
 }

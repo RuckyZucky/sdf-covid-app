@@ -24,12 +24,15 @@ class CovidCharts extends StatelessWidget {
             BarChartContainer(title: "Tode", data: state.deaths);
         var barChartHospitalizations = BarChartContainer(
             title: "Hospitalisierungen", data: state.hospitalization);
+        var barChartIncidence =
+            BarChartContainer(title: "Inzidenz", data: state.incidence);
 
         return Column(
           children: [
             barChartCases,
             barChartDeaths,
-            barChartHospitalizations
+            barChartHospitalizations,
+            barChartIncidence
           ]
         );
       }
