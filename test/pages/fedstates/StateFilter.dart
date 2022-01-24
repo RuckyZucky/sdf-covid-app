@@ -9,46 +9,39 @@ import 'package:sdf_covid/pages/germany/widgets/date_filter/date_filter.dart';
 void main() {
   testWidgets('FedStatesFilter should display all filter options', (WidgetTester tester) async {
     final testWidget = MaterialApp(
-      home: FedStateFilter(
+      home: Material(
+        child: FedStateFilter(),
 
       ));
-
+    FederalState selectedValue = FederalState.BE;
    //
     await tester.pumpWidget(testWidget);
     await tester.pump();
     expect((tester.widget(find.byKey(Key('States'))) as DropdownButton).value,
         equals(FederalState.BE));
 
-    //  await tester.tap(find.ancestor(of: of, matching: matching)
-    //  await tester.pump();
-    // await tester.pump(Duration(seconds: 1));
-    // await tester.tap(find.byKey(Key('States')));
-    //  expect((tester.widget(find.byKey(Key('States'))) as DropdownButton).value,
-    //  equals(FederalState.BY));
-    //  await tester.tap(find.byKey(Key("BAY")));
-    // await tester.pumpAndSettle();
-    // expect((tester.widget(find.byKey(Key('States'))) as DropdownButton).value,
-    //     equals(FederalState.BY));
-   //
-   //  await tester.pumpAndSettle();
-   //
-   // await tester.tap(find.text('Berlin').first);
-   //  await tester.pump();
-   //  await tester.tap(find.text('Bayern'));
-    // await tester.tap(find.text('Baden-Würtemberg').hitTestable(), findsOneWidget);
-    // await tester.tap(find.text('Brandenburg').hitTestable(), findsOneWidget);
-    // await tester.tap(find.text('Bremen').hitTestable(), findsOneWidget);
-    // await tester.tap(find.text('Hamburg').hitTestable(), findsOneWidget);
-    // expect(find.text('Hessem').hitTestable(), findsOneWidget);
-    // expect(find.text('Mecklenburg-Vorpommern').hitTestable(), findsOneWidget);
-    // expect(find.text('Nordrheom-Westfalen').hitTestable(), findsOneWidget);
-    // expect(find.text('Niedersachsen').hitTestable(), findsOneWidget);
-    // expect(find.text('Rheinland-Pfalz').hitTestable(), findsOneWidget);
-    // expect(find.text('Saarland').hitTestable(), findsOneWidget);
-    // expect(find.text('Sachsen').hitTestable(), findsOneWidget);
-    // expect(find.text('Sachsen-Anhalt').hitTestable(), findsOneWidget);
-    // expect(find.text('Schleswig-Holstein').hitTestable(), findsOneWidget);
-    // expect(find.text('Thüringen').hitTestable(), findsOneWidget);
+    await tester.tap(find.byKey(Key('States')));
+    await tester.tap(find.byKey(Key('BLN')));
+    await tester.tap(find.byKey(Key('States')));
+    await tester.tap(find.byKey(Key('BAY')).last);
+    await tester.tap(find.byKey(Key('BAD')).last);
+    await tester.tap(find.byKey(Key('BRE')).last);
+    await tester.tap(find.byKey(Key('HAH')).last);
+    await tester.tap(find.byKey(Key('HES')).last);
+    await tester.tap(find.byKey(Key('MPO')).last);
+    await tester.tap(find.byKey(Key('NRW')).last);
+    await tester.tap(find.byKey(Key('NIE')).last);
+    await tester.tap(find.byKey(Key('SLD')).last);
+    await tester.tap(find.byKey(Key('SAC')).last);
+    await tester.tap(find.byKey(Key('RPF')).last);
+    await tester.tap(find.byKey(Key('SHA')).last);
+    await tester.tap(find.byKey(Key('SHO')).last);
+    await tester.tap(find.byKey(Key('THÜ')).last);
+
+
+
+
+
 
 
   });
