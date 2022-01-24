@@ -7,17 +7,23 @@
 
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:sdf_covid/bloc/federal_state/fedstate_page_bloc.dart';
+import 'package:sdf_covid/bloc/federal_state/fedstate_page_state.dart';
 import 'package:sdf_covid/pages/federalstates/fed_states_ger.dart';
 import 'package:sdf_covid/pages/germany/germany_page.dart';
 
 import 'package:sdf_covid/pages/home/home_page.dart';
 
 void main() {
-  testWidgets('FedPage test', (WidgetTester tester) async {
+  testWidgets('GermanyPage test', (WidgetTester tester) async {
     const testWidget = MaterialApp(
       home: FederalPage(),
     );
+
+
+
 
     // Widget rendern
     await tester.pumpWidget(testWidget);
