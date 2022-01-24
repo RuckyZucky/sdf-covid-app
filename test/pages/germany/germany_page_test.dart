@@ -27,7 +27,7 @@ void main() {
     await tester.pumpWidget(testWidget);
     await tester.pumpAndSettle();
 
-    final appBar = find.byType(DateFilter);
+    final dateFilter = find.byType(DateFilter);
     expect(dateFilter, findsOneWidget);
   });
 
