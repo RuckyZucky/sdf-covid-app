@@ -28,7 +28,7 @@ void main() {
     await tester.pumpAndSettle();
 
     final appBar = find.byType(DateFilter);
-    expect(appBar, findsOneWidget);
+    expect(dateFilter, findsOneWidget);
   });
 
   testWidgets('GermanyPage displays CovidCharts', (WidgetTester tester) async {
