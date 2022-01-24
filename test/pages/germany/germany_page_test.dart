@@ -39,7 +39,7 @@ void main() {
     await tester.pumpWidget(testWidget);
     await tester.pumpAndSettle();
 
-    final appBar = find.byType(CovidCharts);
-    expect(appBar, findsOneWidget);
+    final charts = find.byType(CovidCharts);
+    expect(charts, findsOneWidget);
   });
 }
