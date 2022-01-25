@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:sdf_covid/data/rki_data.dart';
-import 'package:sdf_covid/pages/germany/widgets/bar_chart/bar_chart_container.dart';
 import 'package:sdf_covid/pages/germany/widgets/date_filter/date_filter.dart';
 
 void main() {
-  testWidgets('DateFilter should display all filter options', (WidgetTester tester) async {
-    const testWidget = MaterialApp(
-        home: DateFilter()
-    );
+  testWidgets('DateFilter should display all filter options',
+      (WidgetTester tester) async {
+    final testWidget = MaterialApp(
+        home: DefaultTabController(
+            length: 4,
+            initialIndex: 3,
+            child: Scaffold(
+              appBar: AppBar(
+                  title: const Text('Deutschland'), bottom: const DateFilter()),
+              body: const Center(),
+            )));
 
     await tester.pumpWidget(testWidget);
     await tester.pumpAndSettle();
@@ -18,5 +23,4 @@ void main() {
     expect(find.text('Jahr'), findsOneWidget);
     expect(find.text('Gesamt'), findsOneWidget);
   });
-
 }

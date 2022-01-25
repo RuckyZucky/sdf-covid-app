@@ -1,4 +1,4 @@
-import 'package:sdf_covid/pages/germany/timeframe.dart';
+import 'package:sdf_covid/data/timeframe.dart';
 
 abstract class GermanyPageEvent {}
 

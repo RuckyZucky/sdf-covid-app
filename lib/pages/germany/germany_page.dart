@@ -18,7 +18,7 @@ class GermanyPage extends StatelessWidget {
         create: (context) => GermanyPageBloc(),
         child: Scaffold(
           appBar: AppBar(
-            title: const Text('Aktuelle COVID-19 Situation - Deutschland'),
+            title: const Text('Deutschland'),
             bottom: const DateFilter()
           ),
           bottomNavigationBar: Hero(

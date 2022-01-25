@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sdf_covid/bloc/germany_page/germany_page_bloc.dart';
 import 'package:sdf_covid/bloc/germany_page/germany_page_event.dart';
-
-import '../../timeframe.dart';
+import 'package:sdf_covid/data/timeframe.dart';
 
 class DateFilter extends StatelessWidget implements PreferredSizeWidget {
   const DateFilter({Key? key}) : super(key: key);
@@ -15,13 +14,13 @@ class DateFilter extends StatelessWidget implements PreferredSizeWidget {
         TimeFrame? timeFrame;
         switch(index) {
           case 0:
-            timeFrame = TimeFrame.DAYS;
+            timeFrame = TimeFrame.days;
             break;
           case 1:
-            timeFrame = TimeFrame.MONTH;
+            timeFrame = TimeFrame.month;
             break;
           case 2:
-            timeFrame = TimeFrame.YEAR;
+            timeFrame = TimeFrame.year;
             break;
         }
         context.read<GermanyPageBloc>().add(LoadGermanyPageData(timeframe: timeFrame));
