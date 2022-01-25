@@ -1,3 +1,3 @@
 enum TimeFrame {
-  days, month, year
+  days, month, year, all
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl_standalone.dart';
+import 'package:sdf_covid/pages/federalstates/fed_states_page.dart';
 
 import 'pages/germany/germany_page.dart';
 import 'pages/home/home_page.dart';
@@ -23,7 +24,8 @@ class CovidApp extends StatelessWidget {
       ),
       routes: {
         "/": (context) => const HomePage(),
-        "/germany": (context) => const GermanyPage()
+        "/germany": (context) => const GermanyPage(),
+        "/fedstates": (context) => const FederalPage()
       }
     );
   }

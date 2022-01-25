@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sdf_covid/pages/germany/germany_page.dart';
 import 'package:sdf_covid/pages/germany/widgets/bar_chart/covid_charts.dart';
-import 'package:sdf_covid/pages/germany/widgets/date_filter/date_filter.dart';
+import 'package:sdf_covid/util/widgets/date_filter.dart';
 
 
 void main() {

@@ -1,10 +1,9 @@
-import 'package:intl/date_symbol_data_local.dart';
-
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:sdf_covid/data/rki_data.dart';
-import 'package:sdf_covid/pages/germany/widgets/bar_chart/bar_chart_container.dart';
+import 'package:sdf_covid/util/widgets/bar_chart_container.dart';
 
 void main() {
   setUp(() async {

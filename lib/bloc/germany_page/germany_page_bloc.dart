@@ -12,7 +12,7 @@ class GermanyPageBloc extends Bloc<GermanyPageEvent, GermanyPageState> {
 
       int? days;
 
-      switch (event.timeframe) {
+      switch (event.timeframe ?? TimeFrame.all) {
         case (TimeFrame.days):
           days = 7;
           break;
@@ -21,6 +21,9 @@ class GermanyPageBloc extends Bloc<GermanyPageEvent, GermanyPageState> {
           break;
         case (TimeFrame.year):
           days = 365;
+          break;
+        case (TimeFrame.all):
+          days = null;
           break;
       }
 
