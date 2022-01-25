@@ -52,13 +52,13 @@ class HomePage extends StatelessWidget {
           onTap: (index){
             switch(index){
               case 0:
-                Navigator.pushReplacementNamed(context, "/");
+                // current page -> do nothing
                 break;
               case 1:
-                Navigator.pushReplacementNamed(context, "/germany");
+                Navigator.pushReplacementNamed(context, '/germany');
                 break;
               case 2:
-                Navigator.pushReplacementNamed(context, "/fedstates");
+                Navigator.pushReplacementNamed(context, '/fedstates');
                 break;
             }
           }
@@ -91,7 +91,7 @@ class _HomePageContent extends StatelessWidget {
                 data: state.deaths?.count.toDouble(),
               ),
               DataText(
-                title: Text('7 Tage Inzidenz'),
+                title: const Text('7 Tage Inzidenz'),
                 data: state.incidence?.count.toDouble(),
               ),
               DataText(

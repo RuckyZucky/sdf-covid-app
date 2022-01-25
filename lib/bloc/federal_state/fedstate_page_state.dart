@@ -10,6 +10,7 @@ class FedstatePageLoaded extends FedstatePageState {
   final List<Data>? cases;
   final List<Data>? deaths;
   final List<Data>? hospitalization;
+  final List<Data>? incidence;
 
-  FedstatePageLoaded(this.cases, this.deaths, this.hospitalization);
+  FedstatePageLoaded(this.cases, this.deaths, this.hospitalization, this.incidence);
 }

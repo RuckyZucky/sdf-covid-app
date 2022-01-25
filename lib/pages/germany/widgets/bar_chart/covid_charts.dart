@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sdf_covid/bloc/germany_page/germany_page_bloc.dart';
 import 'package:sdf_covid/bloc/germany_page/germany_page_event.dart';
 import 'package:sdf_covid/bloc/germany_page/germany_page_state.dart';
+import 'package:sdf_covid/util/widgets/bar_chart_container.dart';
 
-import 'bar_chart_container.dart';
 
 class CovidCharts extends StatelessWidget {
   const CovidCharts({Key? key}) : super(key: key);

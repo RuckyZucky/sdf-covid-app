@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sdf_covid/data/rki_data.dart';
-import 'package:sdf_covid/pages/germany/widgets/bar_chart/bar_chart.dart';
+import 'package:sdf_covid/util/widgets/bar_chart.dart';
 
 class BarChartContainer extends StatelessWidget {
   final String title;

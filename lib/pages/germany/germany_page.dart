@@ -4,7 +4,7 @@ import 'package:sdf_covid/bloc/germany_page/germany_page_bloc.dart';
 import 'package:sdf_covid/bloc/germany_page/germany_page_event.dart';
 import 'package:sdf_covid/bloc/germany_page/germany_page_state.dart';
 import 'package:sdf_covid/pages/germany/widgets/bar_chart/covid_charts.dart';
-import 'package:sdf_covid/pages/germany/widgets/date_filter/date_filter.dart';
+import 'package:sdf_covid/util/widgets/date_filter.dart';
 
 class GermanyPage extends StatelessWidget {
   const GermanyPage({Key? key}) : super(key: key);
@@ -19,7 +19,9 @@ class GermanyPage extends StatelessWidget {
         child: Scaffold(
           appBar: AppBar(
             title: const Text('Deutschland'),
-            bottom: const DateFilter()
+            bottom: DateFilter(
+              onTap: (timeFrame, ctx) => ctx.read<GermanyPageBloc>().add(LoadGermanyPageData(timeframe: timeFrame)),
+            )
           ),
           bottomNavigationBar: Hero(
             tag: 'BottomNavBar',
@@ -42,10 +44,13 @@ class GermanyPage extends StatelessWidget {
               onTap: (index){
                 switch(index){
                   case 0:
-                    Navigator.pushReplacementNamed(context, "/");
+                    Navigator.pushReplacementNamed(context, '/');
                     break;
                   case 1:
-                    Navigator.pushReplacementNamed(context, "/germany");
+                    // current page -> do nothing
+                    break;
+                  case 2:
+                    Navigator.pushReplacementNamed(context, '/fedstates');
                     break;
                 }
               },
