@@ -27,8 +27,8 @@ void main() {
     await tester.pumpWidget(testWidget);
     await tester.pumpAndSettle();
 
-    final appBar = find.byType(DateFilter);
-    expect(appBar, findsOneWidget);
+    final dateFilter = find.byType(DateFilter);
+    expect(dateFilter, findsOneWidget);
   });
 
   testWidgets('GermanyPage displays CovidCharts', (WidgetTester tester) async {
@@ -39,7 +39,7 @@ void main() {
     await tester.pumpWidget(testWidget);
     await tester.pumpAndSettle();
 
-    final appBar = find.byType(CovidCharts);
-    expect(appBar, findsOneWidget);
+    final charts = find.byType(CovidCharts);
+    expect(charts, findsOneWidget);
   });
 }
