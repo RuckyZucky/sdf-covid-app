@@ -13,7 +13,7 @@ void main() {
       Data(6, DateTime(2020, 8, 13)),
     ];
 
-    expect(() => IncidenceCalculator(cases, 100000).calculate(), throwsException);
+    expect(() => calculateIncidence(cases, 100000), throwsException);
   });
 
   test('IncidenceCalculator correctly calculates incidence for 7 provided days', () async {
@@ -27,7 +27,7 @@ void main() {
       Data(7, DateTime(2020, 8, 14))
     ];
 
-    final incidence = IncidenceCalculator(cases, 100000).calculate();
+    final incidence = calculateIncidence(cases, 100000);
 
     expect(incidence.length, 1);
     expect(incidence[0].count, 28);
@@ -52,7 +52,7 @@ void main() {
       Data(7, DateTime(2020, 8, 14))
     ];
 
-    final incidence = IncidenceCalculator(cases, 100000).calculate();
+    final incidence = calculateIncidence(cases, 100000);
 
     expect(incidence.length, 8);
     expect(incidence.last.count, 28);
