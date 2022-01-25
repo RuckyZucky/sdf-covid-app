@@ -33,13 +33,6 @@ void main() {
     await tester.tap(find.byKey(const Key('SHA')).last);
     await tester.tap(find.byKey(const Key('SHO')).last);
     await tester.tap(find.byKey(const Key('THÜ')).last);
-
-
-
-
-
-
-
   });
 
 }
